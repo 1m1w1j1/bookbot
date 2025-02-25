@@ -8,9 +8,17 @@ def get_words_number(file_contents):
 def character_count(file_contents):
     alphabet = {}
     lower_string = file_contents.lower()
-    for char in lower_string:
-        if char in alphabet:
+    sorted_string = sorted(lower_string,reverse=True)
+    for char in sorted_string:
+        if char in alphabet and char.isalpha():
             alphabet[char] += 1
-        else:
+        elif char not in alphabet and char.isalpha():
             alphabet[char] = 1
+#        else:
+#            print(f"ignoring {char}")
     return alphabet
+
+def dict_sort(alphabet):
+    sorted_dict = {}
+    sorted_dict = dict(sorted(alphabet.items(), key=lambda item: item[1], reverse=True))
+    return sorted_dict
