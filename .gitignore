@@ -1,0 +1,5 @@
+# Book files
+/books/
+
+# Vim swap files
+*.swp
